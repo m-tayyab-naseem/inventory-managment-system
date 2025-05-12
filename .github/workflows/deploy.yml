@@ -20,11 +20,11 @@ jobs:
 
     - name: Build Backend Docker Image
       run: |
-        docker build -t taayabbb/scd-proj-backend:latest -f my-app-backend/Dockerfile .
+        docker build -t taayabbb/scd-proj-backend:latest -f my-app-backend/Dockerfile my-app-backend
 
     - name: Build Frontend Docker Image
       run: |
-        docker build -t taayabbb/scd-proj-frontend:latest -f my-app/Dockerfile .
+        docker build -t taayabbb/scd-proj-frontend:latest -f my-app/Dockerfile my-app
     - name: Login to Docker Hub
       run: echo "786789786Si" | docker login -u "taayabbb" --password-stdin
 
