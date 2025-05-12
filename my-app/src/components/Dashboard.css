@@ -1,0 +1,49 @@
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  z-index: -1;
+}
+
+.dashboard-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.dashboard-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.dashboard h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.dashboard p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+

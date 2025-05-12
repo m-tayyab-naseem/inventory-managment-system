@@ -1,0 +1,37 @@
+.view-ledgers {
+    padding: 1rem;
+  }
+  
+  .ledgers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .ledger-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ledger-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .ledger-item span {
+    flex: 1;
+  }
+  
+  .ledger-item .status {
+    text-align: right;
+    color: rgba(0, 255, 255, 0.8);
+  }
+  
+  

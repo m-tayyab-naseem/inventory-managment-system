@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:4.4
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mern-app
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017 --quiet || exit 1
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  api:
+    build: ./my-app-backend
+    container_name: my-app-backend_c
+    ports:
+      - '5000:5000'
+    networks:
+      - mern-app
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/yourdbname
+    restart: unless-stopped
+
+  frontend:
+    build: ./my-app
+    container_name: my-app_c
+    ports:
+      - '3000:3000'
+    networks:
+      - mern-app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+
+networks:
+  mern-app:
+    driver: bridge

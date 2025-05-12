@@ -1,0 +1,57 @@
+.individual-ledger-page {
+  min-height: 100vh;
+  color: #ffffff;
+  position: relative;
+}
+
+.ledger-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  z-index: -1;
+}
+
+.ledger-content {
+  padding: 2rem;
+}
+
+.ledger-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.ledger-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.ledger-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ledger-options button {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ledger-options button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
