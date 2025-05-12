@@ -22,7 +22,7 @@ const CreateNewLedger = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await fetch('http://localhost:5000/api/ledger',{
+    const response = await fetch('http://192.168.58.2:32312/api/ledger',{
       method:'POST',
       body:JSON.stringify(formData),
       headers:{

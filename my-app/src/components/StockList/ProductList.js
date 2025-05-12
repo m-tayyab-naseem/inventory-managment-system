@@ -12,7 +12,7 @@ const ProductList = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("http://localhost:5000/api/products");
+      const response = await fetch("http://192.168.58.2:32312/api/products");
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_PRODUCTS", payload: json });
@@ -22,7 +22,7 @@ const ProductList = () => {
   }, [dispatch]);
 
   const handleDelete = async (modelNumber) => {
-    const response = await fetch("http://localhost:5000/api/products/" + modelNumber, {
+    const response = await fetch("http://192.168.58.2:32312/api/products/" + modelNumber, {
       method: "DELETE",
     });
     const json = await response.json();

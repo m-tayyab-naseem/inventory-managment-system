@@ -8,9 +8,9 @@ const individualLedgerRoutes = require('./routes/individualLedgerRoutes')
 const app = express();
 connectDB();
 app.use(cors({
-    origin:"http://localhost:3000",
-    credentials:true,
-}))
+    origin: 'http://192.168.58.2:30007', // Use FRONTEND_URL from environment variables
+    credentials: true,
+}));
 app.use(express.json());
 
 // Routes

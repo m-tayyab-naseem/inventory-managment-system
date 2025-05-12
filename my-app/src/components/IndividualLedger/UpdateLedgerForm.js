@@ -36,7 +36,7 @@ const UpdateLedgerForm = ({ ledger, onClose }) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    const response = await fetch('http://localhost:5000/api/ledger/' + ledger._id + '/installment',{
+    const response = await fetch('http://192.168.58.2:32312/api/ledger/' + ledger._id + '/installment',{
       method:'POST',
       body:JSON.stringify({formData,localInstallment}),
       headers:{

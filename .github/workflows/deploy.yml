@@ -1,0 +1,45 @@
+name: Build and Deploy to Minikube
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure Docker to use Minikube's daemon
+      run: |
+        echo "Setting Docker to use Minikube's Docker daemon..."
+        eval $(minikube docker-env)
+
+    - name: Build Backend Docker Image
+      run: |
+        docker build -t taayabbb/scd-proj-backend:latest -f ../../my-app-backend/Dockerfile ../../my-app-backend
+
+    - name: Build Frontend Docker Image
+      run: |
+        docker build -t taayabbb/scd-proj-frontend:latest -f ../../my-app/Dockerfile ../../my-app
+
+    - name: Login to Docker Hub
+      run: echo "786789786Si" | docker login -u "taayabbb" --password-stdin
+
+    - name: Push Backend Docker Image
+      run: docker push taayabbb/scd-proj-backend:latest
+
+    - name: Push Frontend Docker Image
+      run: docker push taayabbb/scd-proj-frontend:latest
+
+    - name: Apply Kubernetes Configurations
+      run: |
+        kubectl apply -f k8s/backend-deployment.yaml
+        kubectl apply -f k8s/frontend-deployment.yaml
+        kubectl apply -f k8s/mongo-deployment.yaml
+        kubectl apply -f k8s/backend-service.yaml
+        kubectl apply -f k8s/frontend-service.yaml
+        kubectl apply -f k8s/mongo-service.yaml

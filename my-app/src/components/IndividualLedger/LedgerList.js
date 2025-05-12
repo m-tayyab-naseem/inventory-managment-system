@@ -20,7 +20,7 @@ const LedgerList = () => {
 
   useEffect(()=>{
     const fetchLedgers = async ()=>{
-      const response = await fetch('http://localhost:5000/api/ledgers')
+      const response = await fetch('http://192.168.58.2:32312/api/ledgers')
       const json = await response.json()
       if(response.ok){
         dispatch({type:'SET_IND_LEDGERS',payload:json})
