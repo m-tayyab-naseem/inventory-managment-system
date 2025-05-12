@@ -1,0 +1,61 @@
+.create-ledger-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+}
+
+.create-ledger-form h2 {
+  margin-bottom: 1.5rem;
+  color: #00ffff;
+}
+
+.create-ledger-form .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.create-ledger-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.create-ledger-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.create-ledger-form input,
+.create-ledger-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.create-ledger-form .submit-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 255, 255, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.create-ledger-form .submit-btn:hover {
+  background: rgba(0, 255, 255, 0.3);
+}
+

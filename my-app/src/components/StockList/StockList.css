@@ -1,0 +1,48 @@
+.stock-list-page {
+  min-height: 100vh;
+  color: #ffffff;
+  position: relative;
+}
+
+.stock-list-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  z-index: -1;
+}
+
+.stock-list-content {
+  padding: 2rem;
+}
+
+.stock-list-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.stock-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.add-product-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 255, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-product-btn:hover {
+  background: rgba(0, 255, 255, 0.3);
+}
+
