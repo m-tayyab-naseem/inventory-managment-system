@@ -41,4 +41,4 @@ jobs:
         kubectl apply -f k8s/mongo-deployment.yaml
         kubectl apply -f k8s/backend-service.yaml
         kubectl apply -f k8s/frontend-service.yaml
-        kubectl apply -f k8s/mongo-service.yaml
+        kubectl apply -f k8s/mongo-deployment.yaml
